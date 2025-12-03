@@ -1,0 +1,358 @@
+/* --------------------------------------------- */
+/* SPACE GROTESK – LOCAL FONT FILES          */
+/* --------------------------------------------- */
+
+@font-face {
+    font-family: 'SpaceGrotesk';
+    src: url('Space_Grotesk/static/SpaceGrotesk-Light.ttf') format('truetype');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'SpaceGrotesk';
+    src: url('Space_Grotesk/static/SpaceGrotesk-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'SpaceGrotesk';
+    src: url('Space_Grotesk/static/SpaceGrotesk-Medium.ttf') format('truetype');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'SpaceGrotesk';
+    src: url('Space_Grotesk/static/SpaceGrotesk-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+}
+@font-face {
+    font-family: 'SpaceGrotesk';
+    src: url('Space_Grotesk/static/SpaceGrotesk-Bold.ttf') format('truetype');
+    font-weight: 700;
+}
+
+/* --------------------------------------------- */
+/* RESET / BASIS                                 */
+/* --------------------------------------------- */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: #ffffff;
+    font-family: 'SpaceGrotesk', sans-serif;
+    color: #000;
+    overflow-x: hidden; 
+}
+
+/* --------------------------------------------- */
+/* NAME / MENU (Desktop & Header-Fix)            */
+/* --------------------------------------------- */
+
+/* NEU: Header-Container für konsistente Positionierung */
+.top-header {
+    position: fixed;
+    top: 16px;
+    right: 0; 
+    width: 100%; 
+    padding: 0 32px; /* Desktop Rand */
+    z-index: 30;
+    display: flex; 
+    justify-content: flex-end; /* Rechts ausrichten */
+    pointer-events: none; /* Klicks durchlassen */
+}
+
+/* top-name und top-menu erhalten keine feste Position mehr */
+.top-name {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    pointer-events: auto; /* Klicks zulassen */
+}
+.top-name:hover {
+    text-decoration: none;
+}
+
+.top-menu {
+    margin-right: 20px; /* Abstand ZWISCHEN Menu und Name auf Desktop */
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    color: #000;
+    display: none; /* nur im Fokusmodus sichtbar */
+    pointer-events: auto;
+}
+.top-menu:hover {
+    text-decoration: none;
+}
+
+/* --------------------------------------------- */
+/* LISTENANSICHT – 8 ZEILEN                      */
+/* --------------------------------------------- */
+
+.mein-grid {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;/* alle Zeilen gemeinsam mittig */
+    width: 100%;
+    padding: 40px 0 20px;
+}
+
+.mein-grid--menu {
+    min-height: 100vh;
+}
+
+.mein-grid--details .box {
+    display: none;
+}
+
+.box {
+    position: relative;
+    width: 100%;
+    transition: opacity 0.4s ease; 
+}
+
+/* schwarzer Balken beim Hover */
+.box::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: -10px;
+    background-color: #000;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    z-index: -1;
+}
+
+.row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0.15em 12px;   /* fast randnah */
+}
+
+/* großer Titel */
+.title {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: clamp(3rem, 7vw, 5rem);
+    line-height: 0.9;
+    white-space: nowrap;
+}
+
+/* kleiner Text rechts */
+.meta {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    line-height: 1.2;
+    color: #000;
+    margin-left: 0.1rem;
+    margin-top: 0.2rem;
+}
+
+/* Hover: Balken + Textfarbe */
+.box:hover::before {
+    opacity: 1;
+}
+.box:hover .title,
+.box:hover .meta {
+    color: #fff;
+}
+
+/* --------------------------------------------- */
+/* HOVER-BILDER / ÜBERSICHT (Desktop)            */
+/* --------------------------------------------- */
+
+.hover-img {
+    position: fixed;
+    width: 200px;
+    height: 135px;
+    background-color: #e5e5e5;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    opacity: 0;
+    transform: translateY(5px);
+    z-index: 5;
+    transition:
+        opacity 0.45s ease-out 0.15s,
+        transform 0.55s ease-out 0.15s;
+} 
+
+.box[data-project="erwecken"] .img-a { width: 300px; height: 200px;
+}
+.box:hover .hover-img {
+    opacity: 1;
+    transform: translateY(0);
+}
+.hover-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Layout A – ungerade Zeilen */
+.box:nth-child(odd) .img-a { top: 20vh; left: 8vw; }
+.box:nth-child(odd) .img-b { top: 20vh; right: 8vw; }
+.box:nth-child(odd) .img-c { top: 55vh; left: 12vw; }
+.box:nth-child(odd) .img-d { top: 55vh; right: 12vw; }
+/* Layout B – gerade Zeilen */
+.box:nth-child(even) .img-a { top: 24vh; left: 16vw; }
+.box:nth-child(even) .img-b { top: 24vh; right: 16vw; }
+.box:nth-child(even) .img-c { top: 60vh; left: 10vw; }
+.box:nth-child(even) .img-d { top: 60vh; right: 10vw; }
+
+/* --------------------------------------------- */
+/* DETAILSEITE – GRID (Desktop)                  */
+/* --------------------------------------------- */
+
+.project-page {
+    width: 95vw;
+    margin: 0 auto;
+    padding: 80px 0 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.project-hero img {
+    width: 100%;
+    display: block;
+    grid-column: span 6; /* großes Bild über alle 6 Spalten */
+}
+
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6-Spalten-Grid */
+    gap: 24px;
+}
+
+.project-gallery img {
+    width: 100%;
+    display: block;
+    grid-column: span 3; /* Bilder nehmen 3 Spalten -> 2 Bilder pro Reihe */
+    height: auto;
+}
+
+/* KORRIGIERTE TEXT-REGELN (Grid-Breite auf Wrapper, Ausrichtung auf Absatz) */
+.project-text {
+    grid-column: span 4; /* Der Wrapper nimmt 4 Spalten des Grids ein */
+}
+
+.project-text p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #fff; /* Farbe im Fokus-Modus */
+    text-align: left; /* Links-bündig */
+}
+
+/* --------------------------------------------- */
+/* FOCUS MODE – beim Klick auf Titel             */
+/* --------------------------------------------- */
+
+/* Body wird schwarz & darf scrollen */
+body.focus-mode {
+    background-color: #000;
+}
+/* Titel + Meta weiß im Fokus */
+body.focus-mode .title,
+body.focus-mode .meta {
+    color: #fff;
+}
+
+/* Name + Menu weiß; Menu im Fokus sichtbar */
+body.focus-mode .top-name,
+body.focus-mode .top-menu {
+    color: #fff;
+}
+body.focus-mode .top-menu {
+    display: inline-block;
+}
+
+/* Hover-Bilder in Detailansicht ausblenden */
+body.focus-mode .hover-img {
+    display: none;
+}
+
+/* --------------------------------------------- */
+/* MOBILE (@media max-width: 800px)              */
+/* --------------------------------------------- */
+
+@media (max-width: 800px) {
+    /* LISTENANSICHT */
+    .row {
+        flex-direction: column;
+        padding: 0.2em 20px;
+    }
+
+    .title {
+        font-size: clamp(1.6rem, 5vw, 2.6rem);
+        white-space: normal;
+    }
+
+    .meta {
+        margin-left: 0;
+        margin-top: 0.2rem;
+    }
+
+    /* NEUER HEADER AUF MOBILE */
+    .top-header {
+        top: 12px; /* Kleinerer Abstand oben */
+        padding: 0 20px; /* Kleinerer Rand auf Mobile */
+    }
+
+    .top-menu {
+        margin-right: 12px; /* Kleinerer Abstand zwischen Menu und Name */
+    }
+
+    /* DETAILANSICHT */
+    
+    /* 1. POP-UPS AUSBLENDEN */
+    .hover-img {
+        display: none !important;
+    }
+
+    /* 2. GRID FÜR 2ER REIHEN BEHALTEN */
+    .project-gallery {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 12px; 
+    }
+    
+    /* 3. TEXT UND HERO BILD ANPASSEN */
+    .project-hero img {
+        grid-column: span 6; /* Hero-Bild volle Breite */
+    }
+
+    /* KORRIGIERTER TEXT AUF MOBILE */
+    .project-text { 
+        grid-column: span 4; /* 4-Spalten-Breite auf Mobile beibehalten */
+    }
+    .project-text p {
+        text-align: left;    
+        font-size: 0.8rem; 
+    }
+    
+    /* RESTLICHE MOBILE ANPASSUNGEN */
+    .project-page {
+        width: 90vw;
+    }
+}
