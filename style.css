@@ -49,7 +49,9 @@ body {
     background-color: #ffffff;
     font-family: 'SpaceGrotesk', sans-serif;
     color: #000;
-    overflow-x: hidden; 
+    overflow-x: hidden;
+    /* DAS HIER IST NEU: */
+    transition: background-color 2.5s ease; /* 1.5 Sekunden Zeit für den Farbwechsel */
 }
 
 /* --------------------------------------------- */
@@ -58,14 +60,13 @@ body {
 
 /* NEU: Header-Container für konsistente Positionierung */
 .top-header {
-    position: fixed;
-    top: 16px;
-    right: 0; 
+    position: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%; 
-    padding: 0 32px; /* Desktop Rand */
+    padding: 0 12px; /* Desktop Rand */
     z-index: 30;
     display: flex; 
-    justify-content: flex-end; /* Rechts ausrichten */
     pointer-events: none; /* Klicks durchlassen */
 }
 
@@ -73,7 +74,7 @@ body {
 .top-name {
     font-size: 0.8rem;
     font-weight: 500;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     color: #000;
     text-decoration: none;
@@ -186,8 +187,8 @@ body {
 
 .hover-img {
     position: fixed;
-    width: 200px;
-    height: 135px;
+    width: 250px; /* Standardbreite */
+    height: 165px; /* Standardhöhe (ca. 2:3) */
     background-color: #e5e5e5;
     box-shadow: 0 4px 15px rgba(0,0,0,0.25);
     opacity: 0;
@@ -196,34 +197,201 @@ body {
     transition:
         opacity 0.45s ease-out 0.15s,
         transform 0.55s ease-out 0.15s;
+    pointer-events: none; /* Bilder fangen keine Klicks ab */
 } 
 
-.box[data-project="erwecken"] .img-a { width: 300px; height: 200px;
-}
 .box:hover .hover-img {
     opacity: 1;
     transform: translateY(0);
 }
+
 .hover-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-/* Layout A – ungerade Zeilen */
-.box:nth-child(odd) .img-a { top: 20vh; left: 8vw; }
-.box:nth-child(odd) .img-b { top: 20vh; right: 8vw; }
-.box:nth-child(odd) .img-c { top: 55vh; left: 12vw; }
-.box:nth-child(odd) .img-d { top: 55vh; right: 12vw; }
-/* Layout B – gerade Zeilen */
-.box:nth-child(even) .img-a { top: 24vh; left: 16vw; }
-.box:nth-child(even) .img-b { top: 24vh; right: 16vw; }
-.box:nth-child(even) .img-c { top: 60vh; left: 10vw; }
-.box:nth-child(even) .img-d { top: 60vh; right: 10vw; }
+/* ---------------------------------------------------- */
+/* INDIVIDUELLE GRÖSSENANPASSUNG PRO PROJEKT & BILD     */
+/* Passt die width und height der .hover-img div's an   */
+/* ---------------------------------------------------- */
 
+/* ------------------------------------------- */
+/* --- PROJEKT: ERWECKEN DER NACHT (Fokus: Kontrastreich & Klar) --- */
+/* ------------------------------------------- */
+/* --- PROJEKT: ERWECKEN DER NACHT --- */
+/* ALLGEMEINE VORAUSSETZUNGEN:
+   - Übergeordneter Container benötigt position: relative;
+   - Bilder (img-a bis img-d) benötigen position: absolute;
+*/
+
+/* ------------------------------------------- */
+/* --- PROJEKT: ERWECKEN DER NACHT (Fokus: Kontrastreich & Klar) --- */
+/* ALLGEMEINE VORAUSSETZUNGEN:
+   - Übergeordneter Container benötigt position: relative;
+   - Bilder (img-a bis img-d) benötigen position: absolute;
+   - KEINE ÜBERLAPPUNG ERWÜNSCHT.
+*/
+
+/* ------------------------------------------- */
+/* --- PROJEKT: ERWECKEN DER NACHT (Blockstruktur) --- */
+.box[data-project="erwecken"] .img-a { width: 420px; height: 280px; top: 25vh; left: 10vw; z-index: 10; } /* Links oben */
+.box[data-project="erwecken"] .img-b { width: 250px; height: 375px; top: 28vh; right: 15vw; z-index: 12; } /* Rechts oben (Vertikal) */
+.box[data-project="erwecken"] .img-c { width: 300px; height: 200px; top: 55vh; left: 15vw; z-index: 9; } /* Links Mitte/Unten, unter A */
+.box[data-project="erwecken"] .img-d { width: 200px; height: 135px; top: 68vh; right: 8vw; z-index: 8; } /* Rechts unten */
+
+/* ------------------------------------------- */
+/* --- PROJEKT: ZWISCHEN LICHT UND RAUM (Fokus: Weit & Saubere Trennung) --- */
+.box[data-project="licht-raum"] .img-a { width: 550px; height: 365px; top: 30vh; left: 5vw; z-index: 12; } /* Links dominant */
+.box[data-project="licht-raum"] .img-b { width: 250px; height: 165px; top: 35vh; right: 18vw; z-index: 9; } /* Rechts oben */
+.box[data-project="licht-raum"] .img-c { width: 180px; height: 270px; top: 40vh; left: 60vw; z-index: 11; } /* Mitte rechts (Vertikal) */
+.box[data-project="licht-raum"] .img-d { width: 380px; height: 250px; top: 70vh; right: 5vw; z-index: 10; } /* Rechts unten */
+
+/* ------------------------------------------- */
+/* --- PROJEKT: SCHRIFT IM STROM (Fokus: Vertikal & Horizontal getrennt) --- */
+.box[data-project="schrift"] .img-a { width: 280px; height: 420px; top: 20vh; left: 15vw; z-index: 12; } /* Links oben (Vertikal) */
+.box[data-project="schrift"] .img-b { width: 450px; height: 300px; top: 25vh; right: 10vw; z-index: 10; } /* Rechts oben (Horizontal) */
+.box[data-project="schrift"] .img-c { width: 200px; height: 135px; top: 65vh; left: 5vw; z-index: 9; } /* Links unten */
+.box[data-project="schrift"] .img-d { width: 300px; height: 200px; top: 68vh; right: 20vw; z-index: 8; } /* Rechts unten */
+
+/* ------------------------------------------- */
+/* --- PROJEKT: ZWISCHEN TÜREN (Fokus: Große Blöcke mit Zwischenraum) --- */
+.box[data-project="tueren"] .img-a { width: 380px; height: 255px; top: 28vh; left: 15vw; z-index: 10; } /* Links oben */
+.box[data-project="tueren"] .img-b { width: 250px; height: 375px; top: 40vh; right: 10vw; z-index: 11; } /* Rechts Mitte (Vertikal) */
+.box[data-project="tueren"] .img-c { width: 200px; height: 135px; top: 60vh; left: 5vw; z-index: 8; } /* Links unten */
+.box[data-project="tueren"] .img-d { width: 550px; height: 365px; top: 70vh; right: 2vw; z-index: 12; } /* Dominanter Abschluss rechts unten */
+
+/* ------------------------------------------- */
+/* --- PROJEKT: LEBEN IM SCHATTEN (Fokus: Klare Trennung um den Balken) --- */
+.box[data-project="schatten"] .img-a { width: 450px; height: 300px; top: 23vh; left: 8vw; z-index: 11; } /* Links oben */
+.box[data-project="schatten"] .img-b { width: 220px; height: 330px; top: 35vh; right: 18vw; z-index: 10; } /* Rechts oben (Vertikal) */
+.box[data-project="schatten"] .img-c { width: 280px; height: 190px; top: 55vh; left: 20vw; z-index: 9; } /* Links unten (unter dem Balken) */
+.box[data-project="schatten"] .img-d { width: 400px; height: 270px; top: 70vh; right: 10vw; z-index: 12; } /* Rechts unten */
+
+/* ------------------------------------------- */
+/* --- PROJEKT: DAS ZUSAMMENSPIEL (Fokus: Ausgewogene Dominanz) --- */
+.box[data-project="zusammenspiel"] .img-a { width: 300px; height: 200px; top: 33vh; left: 12vw; z-index: 9; } /* Links oben */
+.box[data-project="zusammenspiel"] .img-b { width: 240px; height: 360px; top: 50vh; right: 15vw; z-index: 11; } /* Rechts Mitte (Vertikal) */
+.box[data-project="zusammenspiel"] .img-c { width: 480px; height: 320px; top: 70vh; left: 6vw; z-index: 12; } /* Dominanter Abschluss links unten */
+.box[data-project="zusammenspiel"] .img-d { width: 180px; height: 120px; top: 85vh; right: 20vw; z-index: 8; } /* Kleiner Akzent rechts unten */
+
+/* ------------------------------------------- */
+/* --- PROJEKT: HIDDEN LONDON (Fokus: Links/Rechts-Trennung) --- */
+.box[data-project="hidden-london"] .img-a { width: 280px; height: 185px; top: 25vh; left: 18vw; z-index: 9; } /* Links oben */
+.box[data-project="hidden-london"] .img-b { width: 450px; height: 300px; top: 37vh; right: 5vw; z-index: 12; } /* Rechts oben (Dominant) */
+.box[data-project="hidden-london"] .img-c { width: 200px; height: 300px; top: 50vh; left: 10vw; z-index: 11; } /* Links Mitte (Vertikal) */
+.box[data-project="hidden-london"] .img-d { width: 350px; height: 235px; top: 75vh; right: 15vw; z-index: 10; } /* Rechts unten */
+
+/* ------------------------------------------- */
+/* --- PROJEKT: WIE IM FILM (Fokus: Klassisch Cinema-Scope-Betont) --- */
+.box[data-project="film"] .img-a { width: 520px; height: 345px; top: 20vh; left: 5vw; z-index: 12; } /* Links oben (Sehr groß) */
+.box[data-project="film"] .img-b { width: 220px; height: 150px; top: 30vh; right: 20vw; z-index: 9; } /* Rechts oben */
+.box[data-project="film"] .img-c { width: 300px; height: 200px; top: 55vh; left: 18vw; z-index: 10; } /* Links unten */
+.box[data-project="film"] .img-d { width: 360pxx; height: 240px; top: 60vh; right: 10vw; z-index: 11; } /* Rechts unten (Vertikal) */
+/* Beispiel-Basis-CSS für die Positionierung */
+
+/* Der Container der Bilder, der beim Hovern sichtbar wird */
+.box:hover .image-container {
+    /* ... Sichtbarkeit einstellen (opacity, display: block) */
+    position: absolute; /* Oder fixed, je nach Wunsch */
+    /* ... weitere Stil-Einstellungen */
+}
+
+/* Die einzelnen Bilder positionieren (Beispiel für PROJEKT: ERWECKEN DER NACHT) */
+.box[data-project="erwecken"] .img-a {
+    /* ... Größen-Code von oben ... */
+    position: absolute;
+    top: -50px;    /* Oben links */
+    left: -100px;
+    z-index: 10;
+}
+
+.box[data-project="erwecken"] .img-b {
+    /* ... Größen-Code von oben ... */
+    position: absolute;
+    top: 100px;    /* Rechts überlappend */
+    right: -150px;
+    z-index: 12; /* Überlappt A */
+}
+
+.box[data-project="erwecken"] .img-c {
+    /* ... Größen-Code von oben ... */
+    position: absolute;
+    bottom: -80px; /* Unten links */
+    left: 20px;
+    z-index: 8;
+}
+
+.box[data-project="erwecken"] .img-d {
+    /* ... Größen-Code von oben ... */
+    position: absolute;
+    bottom: 0;     /* Rechts unten */
+    right: 0;
+    z-index: 9;
+}
 /* --------------------------------------------- */
-/* DETAILSEITE – GRID (Desktop)                  */
+/* POSITIONIERUNG DER HOVER-BILDER               */
+/* Bei geänderten Bildgrößen müssen diese Werte  */
+/* eventuell angepasst werden!                   */
 /* --------------------------------------------- */
+/* ALLGEMEINE VORAUSSETZUNGEN:
+   - Bilder (img-a bis img-d) benötigen position: absolute;
+   - KEINE ÜBERLAPPUNG!
+*/
+
+/* GRÖSSENDEFINITION (AUS DEM VORHERIGEN SCHRITT, WIEDERHOLT ZUR KLARHEIT) */
+.box [class^="img-"] { width: 350px; height: 250px; }
+
+/* ------------------------------------------- */
+/* --- VEREINHEITLICHTE POSITIONIERUNG FÜR ALLE PROJEKTE --- */
+
+/* --- PROJEKT: ERWECKEN DER NACHT --- */
+.box[data-project="erwecken"] .img-a { top: 20vh; left: 5vw; }
+.box[data-project="erwecken"] .img-b { top: 20vh; right: 5vw; }
+.box[data-project="erwecken"] .img-c { top: 55vh; left: 15vw; }
+.box[data-project="erwecken"] .img-d { top: 55vh; right: 15vw; }
+
+/* --- PROJEKT: ZWISCHEN LICHT UND RAUM --- */
+.box[data-project="licht-raum"] .img-a { top: 20vh; left: 5vw; }
+.box[data-project="licht-raum"] .img-b { top: 20vh; right: 5vw; }
+.box[data-project="licht-raum"] .img-c { top: 55vh; left: 15vw; }
+.box[data-project="licht-raum"] .img-d { top: 55vh; right: 15vw; }
+
+/* --- PROJEKT: SCHRIFT IM STROM --- */
+.box[data-project="schrift"] .img-a { top: 20vh; left: 5vw; }
+.box[data-project="schrift"] .img-b { top: 20vh; right: 5vw; }
+.box[data-project="schrift"] .img-c { top: 55vh; left: 15vw; }
+.box[data-project="schrift"] .img-d { top: 55vh; right: 15vw; }
+
+/* --- PROJEKT: ZWISCHEN TÜREN --- */
+.box[data-project="tueren"] .img-a { top: 20vh; left: 5vw; }
+.box[data-project="tueren"] .img-b { top: 20vh; right: 5vw; }
+.box[data-project="tueren"] .img-c { top: 55vh; left: 15vw; }
+.box[data-project="tueren"] .img-d { top: 55vh; right: 15vw; }
+
+/* --- PROJEKT: LEBEN IM SCHATTEN --- */
+.box[data-project="schatten"] .img-a { top: 20vh; left: 5vw; }
+.box[data-project="schatten"] .img-b { top: 20vh; right: 15vw; }
+.box[data-project="schatten"] .img-c { top: 60vh; left: 15vw; }
+.box[data-project="schatten"] .img-d { top: 40vh; right: 15vw; }
+
+/* --- PROJEKT: DAS ZUSAMMENSPIEL --- */
+.box[data-project="zusammenspiel"] .img-a { top: 20vh; left: 5vw; }
+.box[data-project="zusammenspiel"] .img-b { top: 20vh; right: 5vw; }
+.box[data-project="zusammenspiel"] .img-c { top: 55vh; left: 15vw; }
+.box[data-project="zusammenspiel"] .img-d { top: 55vh; right: 15vw; }
+
+/* --- PROJEKT: HIDDEN LONDON --- */
+.box[data-project="hidden-london"] .img-a { top: 20vh; left: 5vw; }
+.box[data-project="hidden-london"] .img-b { top: 20vh; right: 5vw; }
+.box[data-project="hidden-london"] .img-c { top: 55vh; left: 15vw; }
+.box[data-project="hidden-london"] .img-d { top: 60vh; right: 15vw; }
+
+/* --- PROJEKT: WIE IM FILM --- */
+.box[data-project="film"] .img-a { top: 20vh; left: 5vw; }
+.box[data-project="film"] .img-b { top: 20vh; right: 5vw; }
+.box[data-project="film"] .img-c { top: 55vh; left: 15vw; }
+.box[data-project="film"] .img-d { top: 55vh; right: 15vw; }
 
 .project-page {
     width: 95vw;
@@ -260,7 +428,7 @@ body {
 
 .project-text p {
     font-size: 0.95rem;
-    line-height: 1.6;
+    line-height: 1.2;
     color: #fff; /* Farbe im Fokus-Modus */
     text-align: left; /* Links-bündig */
 }
