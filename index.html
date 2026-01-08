@@ -11,14 +11,23 @@
     <div class="top-header">
       <a href="#" class="top-menu">Projekte</a>
       <a href="#" class="top-name">Ikran Hassan</a>
+
+      <div class="ikran-popups">
+        <div class="ikran-img-box left">
+          <img src="imgs/DEIN_PROFILBILD.jpg" alt="Ikran Work Left" />
+        </div>
+        <div class="ikran-img-box right">
+          <img src="imgs/uebermich_1.jpg" alt="Ikran Work Right" />
+        </div>
+      </div>
     </div>
+
     <div class="mein-grid mein-grid--menu">
       <div class="box" data-project="erwecken">
         <div class="row">
           <a href="#" class="title">Erwecken der Nacht</a>
           <span class="meta">Stopmotion<br />2024</span>
         </div>
-
         <div class="hover-img img-a">
           <img src="imgs/Erwecken_der_Nacht_1.jpg" alt="" />
         </div>
@@ -38,18 +47,17 @@
           <a href="#" class="title">Zwischen Licht und Raum</a>
           <span class="meta">Signaletik<br />2024</span>
         </div>
-
         <div class="hover-img img-a">
-          <img src="imgs/Schrift_im_Strom_2.jpg" alt="" />
+          <img src="imgs/zwischen_licht_und_raum_8.jpg" alt="" />
         </div>
         <div class="hover-img img-b">
-          <img src="imgs/Schrift_im_Strom_2.jpg" alt="" />
+          <img src="imgs/zwischen_licht_und_raum_6.jpg" alt="" />
         </div>
         <div class="hover-img img-c">
-          <img src="imgs/Schrift_im_Strom_2.jpg" alt="" />
+          <img src="imgs/zwischen_licht_und_raum_1.jpg" alt="" />
         </div>
         <div class="hover-img img-d">
-          <img src="imgs/Schrift_im_Strom_2.jpg" alt="" />
+          <img src="imgs/zwischen_licht_und_raum_7.jpg" alt="" />
         </div>
       </div>
 
@@ -58,7 +66,6 @@
           <a href="#" class="title">Schrift im Strom</a>
           <span class="meta">Editorial<br />2024</span>
         </div>
-
         <div class="hover-img img-a">
           <img src="imgs/Schrift_im_Strom_3.jpg" alt="" />
         </div>
@@ -76,20 +83,19 @@
       <div class="box" data-project="tueren">
         <div class="row">
           <a href="#" class="title">Zwischen Türen</a>
-          <span class="meta">Poster Design<br />2025</span>
+          <span class="meta">Poster<br />2025</span>
         </div>
-
         <div class="hover-img img-a">
-          <img src="imgs/Schrift_im_Strom_2.jpg" alt="" />
+          <img src="imgs/zwischen_Türen_4.jpg" alt="" />
         </div>
         <div class="hover-img img-b">
-          <img src="imgs/Schrift_im_Strom_2.jpg" alt="" />
+          <img src="imgs/zwischen_Türen_2.jpg" alt="" />
         </div>
         <div class="hover-img img-c">
-          <img src="imgs/Schrift_im_Strom_2.jpg" alt="" />
+          <img src="imgs/zwischen_Türen_6.jpg" alt="" />
         </div>
         <div class="hover-img img-d">
-          <img src="imgs/Schrift_im_Strom_2.jpg" alt="" />
+          <img src="imgs/zwischen_Türen_5.jpg" alt="" />
         </div>
       </div>
 
@@ -98,7 +104,6 @@
           <a href="#" class="title">Leben im Schatten</a>
           <span class="meta">Editorial<br />2025</span>
         </div>
-
         <div class="hover-img img-a">
           <img src="imgs/Leben_im_Schatten_1.jpg" alt="" />
         </div>
@@ -118,7 +123,6 @@
           <a href="#" class="title">Das Zusammenspiel</a>
           <span class="meta">Poster<br />2025</span>
         </div>
-
         <div class="hover-img img-a">
           <img src="imgs/das_Zusammenspiel_1.jpg" alt="" />
         </div>
@@ -138,7 +142,6 @@
           <a href="#" class="title">Hidden London</a>
           <span class="meta">Editorial<br />2025</span>
         </div>
-
         <div class="hover-img img-a">
           <img src="imgs/Hidden_London_1.jpg" alt="" />
         </div>
@@ -158,7 +161,6 @@
           <a href="#" class="title">Wie im Film</a>
           <span class="meta">Poster<br />2025</span>
         </div>
-
         <div class="hover-img img-a">
           <img src="imgs/Wie_im_film_2.jpg" alt="" />
         </div>
@@ -173,6 +175,7 @@
         </div>
       </div>
     </div>
+
     <div class="mein-grid mein-grid--details">
       <div class="box" data-project="erwecken">
         <div class="project-detail">
@@ -180,14 +183,15 @@
             <div class="project-hero">
               <img src="imgs/Erwecken_der_Nacht_6.jpg" alt="" />
             </div>
-
             <div class="project-gallery">
-              <img src="imgs/Erwecken_der_Nacht_1.jpg" alt="" />
-              <img src="imgs/Erwecken_der_Nacht_2.jpg" alt="" />
-              <img src="imgs/Erwecken_der_Nacht_3.jpg" alt="" />
-              <img src="imgs/Erwecken_der_Nacht_4.jpg" alt="" />
-              <img src="imgs/Erwecken_der_Nacht_5.jpg" alt="" />
-
+              <img
+                src="imgs/Erwecken_der_Nacht_5.jpg"
+                alt=""
+                class="full-span"
+                src="imgs/Erwecken_der_Nacht_1.jpg"
+                alt=""
+                class="full-span"
+              />
               <div
                 class="project-video"
                 style="grid-column: span 6; width: 100%"
@@ -200,12 +204,12 @@
                   loop
                 >
                   <source src="video/video.mp4" type="video/mp4" />
-
                   Dein Browser unterstützt das Video-Tag nicht.
                 </video>
               </div>
-              <div class="project-text">
-                <p>
+
+              <div class="description-container">
+                <p class="description">
                   Farbe existiert nicht. Wohin man auch blickt, überall Grau,
                   Schwarz oder Weiss. In einer solchen düsteren Welt gibt es
                   nichts anderes. Bis eines Nachts Glühwürmchen auftauchen und
@@ -216,6 +220,12 @@
                   veranschaulicht, wie Farbe eine Umgebung verwandeln und ihr
                   neues Leben einhauchen kann.
                 </p>
+              </div>
+
+              <div class="project-meta-container">
+                <div class="project-meta">
+                  <span>Stopmotion</span>
+                </div>
               </div>
             </div>
           </div>
@@ -229,12 +239,16 @@
               <img src="imgs/zwischen_licht_und_raum_.jpg" alt="" />
             </div>
             <div class="project-gallery">
+              <img src="imgs/zwischen_licht_und_raum_4.jpg" alt="" />
+              <img src="imgs/zwischen_licht_und_raum_8.jpg" alt="" />
+              <img src="imgs/zwischen_licht_und_raum_5.jpg" alt="" />
+              <img src="imgs/zwischen_licht_und_raum_7.jpg" alt="" />
               <img src="imgs/zwischen_licht_und_raum_1.jpg" alt="" />
               <img src="imgs/zwischen_licht_und_raum_2.jpg" alt="" />
               <img src="imgs/zwischen_licht_und_raum_3.jpg" alt="" />
 
-              <div class="project-text">
-                <p>
+              <div class="description-container">
+                <p class="description">
                   Ein Spiel aus Licht, Schatten und Raum. Typografie, die sich
                   bewegt, kippt, schwebt und sich neu zusammensetzt. „Typo“
                   untersucht, wie Schrift im Raum wirkt, wenn sie ihre
@@ -245,6 +259,13 @@
                   Form, Typografie zu Raum reduziert, direkt und voller Spannung
                   zwischen Bewegung und Ruhe
                 </p>
+              </div>
+
+              <div class="project-meta-container">
+                <div class="project-meta">
+                  <span>Signaletik</span>
+                  <span>Rauminstallation</span>
+                </div>
               </div>
             </div>
           </div>
@@ -258,20 +279,28 @@
               <img src="imgs/Schrift_im_Strom_1.jpg" alt="" />
             </div>
             <div class="project-gallery">
-              <img src="imgs/Schrift_im_Strom_2.jpg" alt="" />
-              <img src="imgs/Schrift_im_Strom_3.jpg" alt="" />
-              <img src="imgs/Schrift_im_Strom_4.jpg" alt="" />
-              <img src="imgs/Schrift_im_Strom_5.jpg" alt="" />
-              <img src="imgs/Schrift_im_Strom_6.jpg" alt="" />
-              <img src="imgs/Schrift_im_Strom_7.jpg" alt="" />
-              <img src="imgs/Schrift_im_Strom_8.jpg" alt="" />
               <img src="imgs/Schrift_im_Strom_9.jpg" alt="" />
               <img src="imgs/Schrift_im_Strom_10.jpg" alt="" />
               <img src="imgs/Schrift_im_Strom_11.jpg" alt="" />
               <img src="imgs/Schrift_im_Strom_12.jpg" alt="" />
+              <img src="imgs/Schrift_im_Strom_2.jpg" alt="" />
+              <img src="imgs/Schrift_im_Strom_3.jpg" alt="" />
+              <img src="imgs/Schrift_im_Strom_7.jpg" alt="" class="full-span" />
+              <img src="imgs/Schrift_im_Strom_4.jpg" alt="" />
+              <img src="imgs/Schrift_im_Strom_5.jpg" alt="" />
+              <img src="imgs/Schrift_im_Strom_6.jpg" alt="" />
+              <img src="imgs/Schrift_im_Strom_13.jpg" alt="" />
+              <img src="imgs/Schrift_im_Strom_14.jpg" alt="" />
+              <img src="imgs/Schrift_im_Strom_15.jpg" alt="" />
+              <img src="imgs/Schrift_im_Strom_16.jpg" alt="" />
+              <img src="imgs/Schrift_im_Strom_17.jpg" alt="" />
+              <img src="imgs/Schrift_im_Strom_18.jpg" alt="" />
+              <img src="imgs/Schrift_im_Strom_19.jpg" alt="" />
+              <img src="imgs/Schrift_im_Strom_20.jpg" alt="" />
+              <img src="imgs/Schrift_im_Strom_21.jpg" alt="" />
 
-              <div class="project-text">
-                <p>
+              <div class="description-container">
+                <p class="description">
                   Links, rechts, links, eine Etage hoch, dann wieder hinunter,
                   nach links. Wohin man auch blickt Menschen, überall. Keine
                   Zeit, nicht einmal um tief durchzuatmen, denn die U-Bahn kommt
@@ -284,6 +313,14 @@
                   hin zu einem einzigen Ziel dem berühmtesten Gemälde der Welt
                 </p>
               </div>
+
+              <div class="project-meta-container">
+                <div class="project-meta">
+                  <span>Editorial</span>
+                  <span>150 x 165mm</span>
+                  <span>42 Seiten</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -293,19 +330,19 @@
         <div class="project-detail">
           <div class="project-page">
             <div class="project-hero">
-              <img src="imgs/zwischen_Türen.jpg" alt="" />
+              <img src="imgs/zwischen_Türen.jpg" alt="" />
             </div>
             <div class="project-gallery">
-              <img src="imgs/zwischen_Türen_1.jpg" alt="" />
-              <img src="imgs/zwischen_Türen_2.jpg" alt="" />
-              <img src="imgs/zwischen_Türen_3.jpg" alt="" />
-              <img src="imgs/zwischen_Türen_4.jpg" alt="" />
-              <img src="imgs/zwischen_Türen_5.jpg" alt="" />
-              <img src="imgs/zwischen_Türen_6.jpg" alt="" />
-              <img src="imgs/zwischen_Türen_7.jpg" alt="" />
+              <img src="imgs/zwischen_Türen_1.jpg" alt="" />
+              <img src="imgs/zwischen_Türen_2.jpg" alt="" />
+              <img src="imgs/zwischen_Türen_3.jpg" alt="" />
+              <img src="imgs/zwischen_Türen_4.jpg" alt="" />
+              <img src="imgs/zwischen_Türen_5.jpg" alt="" />
+              <img src="imgs/zwischen_Türen_6.jpg" alt="" />
+              <img src="imgs/zwischen_Türen_7.jpg" alt="" />
 
-              <div class="project-text">
-                <p>
+              <div class="description-container">
+                <p class="description">
                   Sich zugehörig zu fühlen, bedeutet nicht, die gleiche Sprache
                   zu sprechen. Es kann ein Lächeln im Treppenhaus sein oder ein
                   kurzer, freundlicher Gruss am Morgen. Gemeinsam zu wohnen
@@ -316,6 +353,12 @@
                   Nationen an den Fenstern zeigen, wie unterschiedliche Leben
                   zusammen ein Miteinander formen.
                 </p>
+              </div>
+
+              <div class="project-meta-container">
+                <div class="project-meta">
+                  <span>Poster Design</span>
+                </div>
               </div>
             </div>
           </div>
@@ -329,10 +372,26 @@
               <img src="imgs/Leben_im_Schatten_1.jpg" alt="" />
             </div>
             <div class="project-gallery">
-              <img src="imgs/Leben_im_Schatten_2.jpg" alt="" />
-              <img src="imgs/Leben_im_Schatten_3.jpg" alt="" />
-              <img src="imgs/Leben_im_Schatten_4.jpg" alt="" />
-              <img src="imgs/Leben_im_Schatten_5.jpg" alt="" />
+              <img
+                src="imgs/Leben_im_Schatten_2.jpg"
+                alt=""
+                class="full-span"
+              />
+              <img
+                src="imgs/Leben_im_Schatten_3.jpg"
+                alt=""
+                class="full-span"
+              />
+              <img
+                src="imgs/Leben_im_Schatten_4.jpg"
+                alt=""
+                class="full-span"
+              />
+              <img
+                src="imgs/Leben_im_Schatten_5.jpg"
+                alt=""
+                class="full-span"
+              />
               <img src="imgs/Leben_im_Schatten_6.jpg" alt="" />
               <img src="imgs/Leben_im_Schatten_8.jpg" alt="" />
               <img src="imgs/Leben_im_Schatten_9.jpg" alt="" />
@@ -346,8 +405,8 @@
               <img src="imgs/Leben_im_Schatten_17.jpg" alt="" />
               <img src="imgs/Leben_im_Schatten_18.jpg" alt="" />
 
-              <div class="project-text">
-                <p>
+              <div class="description-container">
+                <p class="description">
                   Zwischen hohen Betonhäusern in der Baselstrasse Luzern, einer
                   der ärmeren Gegenden der Schweiz erleben viele Menschen ihren
                   Alltag oft in Schwarz-Weiss, geprägt von täglichen
@@ -358,6 +417,14 @@
                   Bernstrasse konnte dieser Text entstehen, der nun einen
                   wichtigen Bestandteil dieser Arbeit bildet
                 </p>
+              </div>
+
+              <div class="project-meta-container">
+                <div class="project-meta">
+                  <span>Editorial</span>
+                  <span>315 x 470 mm </span>
+                  <span>4 Seiten</span>
+                </div>
               </div>
             </div>
           </div>
@@ -374,12 +441,10 @@
               <img src="imgs/das_Zusammenspiel_1.jpg" alt="" />
               <img src="imgs/das_Zusammenspiel_2.jpg" alt="" />
               <img src="imgs/das_Zusammenspiel_3.jpg" alt="" />
-              <img src="imgs/das_Zusammenspiel_4.jpg" alt="" />
-              <img src="imgs/das_Zusammenspiel_5.jpg" alt="" />
               <img src="imgs/das_Zusammenspiel_6.jpg" alt="" />
 
-              <div class="project-text">
-                <p>
+              <div class="description-container">
+                <p class="description">
                   Der Bass lässt den Raum vibrieren, der Rhythmus trägt durch
                   den Moment. Musik entsteht, wenn Klänge aufeinandertreffen,
                   sich verweben und Neues formen, harmonisch, überraschend und
@@ -390,6 +455,12 @@
                   erzeugen ein dynamisches, rhythmisches Geflecht aus Form,
                   Bewegung und intensiver emotionaler Wirkung.
                 </p>
+              </div>
+
+              <div class="project-meta-container">
+                <div class="project-meta">
+                  <span>Poster</span>
+                </div>
               </div>
             </div>
           </div>
@@ -403,21 +474,21 @@
               <img src="imgs/Hidden_London_1.jpg" alt="" />
             </div>
             <div class="project-gallery">
-              <img src="imgs/Hidden_London_2.jpg" alt="" />
+              <img src="imgs/Hidden_London_10.jpg" alt="" />
+              <img src="imgs/Hidden_London_9.jpg" alt="" />
               <img src="imgs/Hidden_London_3.jpg" alt="" />
+              <img src="imgs/Hidden_London_2.jpg" alt="" />
+              <img src="imgs/Hidden_London_6.jpg" alt="" class="full-span" />
               <img src="imgs/Hidden_London_4.jpg" alt="" />
               <img src="imgs/Hidden_London_5.jpg" alt="" />
-              <img src="imgs/Hidden_London_6.jpg" alt="" />
               <img src="imgs/Hidden_London_7.jpg" alt="" />
               <img src="imgs/Hidden_London_8.jpg" alt="" />
-              <img src="imgs/Hidden_London_9.jpg" alt="" />
-              <img src="imgs/Hidden_London_10.jpg" alt="" />
-              <img src="imgs/Hidden_London_11.jpg" alt="" />
+              <img src="imgs/Hidden_London_11.jpg" alt="" class="full-span" />
               <img src="imgs/Hidden_London_12.jpg" alt="" />
               <img src="imgs/Hidden_London_13.jpg" alt="" />
 
-              <div class="project-text">
-                <p>
+              <div class="description-container">
+                <p class="description">
                   In London wird es enger. Häuser wachsen, Strassen dehnen sich
                   aus, und die Tiere ziehen sich zurück. „Hidden London“ erzählt
                   von diesem Verdrängen und Verschwinden. Es gibt unzählige
@@ -428,6 +499,14 @@
                   Schriftgrössen und versteckte Elemente symbolisieren das
                   Verschwinden und Wiederauftauchen der Tiere in London.
                 </p>
+              </div>
+
+              <div class="project-meta-container">
+                <div class="project-meta">
+                  <span>Editorial</span>
+                  <span>195 x 280mm</span>
+                  <span>132 Seiten</span>
+                </div>
               </div>
             </div>
           </div>
@@ -443,13 +522,12 @@
             <div class="project-gallery">
               <img src="imgs/Wie_im_film_1.jpg" alt="" />
               <img src="imgs/Wie_im_film_2.jpg" alt="" />
-              <img src="imgs/Wie_im_Film_3.jpg" alt="" />
-              <img src="imgs/Wie_im_Film_4.jpg" alt="" />
               <img src="imgs/Wie_im_film_5.jpg" alt="" />
               <img src="imgs/Wie_im_Film_6.jpg" alt="" />
-
-              <div class="project-text">
-                <p>
+              <img src="imgs/Wie_im_Film_3.jpg" alt="" />
+              <img src="imgs/Wie_im_Film_4.jpg" alt="" />
+              <div class="description-container">
+                <p class="description">
                   Ein Bild, das denkt. Eine Szene, die sich selbst erschafft.
                   „Wie im Film“ zeigt, wie künstliche Intelligenz die Grenzen
                   zwischen Vorstellung und Wirklichkeit verwischt. Aus Daten
@@ -460,6 +538,12 @@
                   flimmerndes Zwischenbild aus Technik und Traum, das sich
                   anfühlt, als wäre es wie im Film.
                 </p>
+              </div>
+
+              <div class="project-meta-container">
+                <div class="project-meta">
+                  <span>Poster</span>
+                </div>
               </div>
             </div>
           </div>

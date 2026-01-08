@@ -1,31 +1,31 @@
 /* --------------------------------------------- */
-/* SPACE GROTESK – LOCAL FONT FILES          */
+/* SPACE GROTESK – LOCAL FONT FILES              */
 /* --------------------------------------------- */
 
 @font-face {
-    font-family: 'SpaceGrotesk';
-    src: url('Space_Grotesk/static/SpaceGrotesk-Light.ttf') format('truetype');
-    font-weight: 300;
+  font-family: 'SpaceGrotesk';
+  src: url('Space_Grotesk/static/SpaceGrotesk-Light.ttf') format('truetype');
+  font-weight: 300;
 }
 @font-face {
-    font-family: 'SpaceGrotesk';
-    src: url('Space_Grotesk/static/SpaceGrotesk-Regular.ttf') format('truetype');
-    font-weight: 400;
+  font-family: 'SpaceGrotesk';
+  src: url('Space_Grotesk/static/SpaceGrotesk-Regular.ttf') format('truetype');
+  font-weight: 400;
 }
 @font-face {
-    font-family: 'SpaceGrotesk';
-    src: url('Space_Grotesk/static/SpaceGrotesk-Medium.ttf') format('truetype');
-    font-weight: 500;
+  font-family: 'SpaceGrotesk';
+  src: url('Space_Grotesk/static/SpaceGrotesk-Medium.ttf') format('truetype');
+  font-weight: 500;
 }
 @font-face {
-    font-family: 'SpaceGrotesk';
-    src: url('Space_Grotesk/static/SpaceGrotesk-SemiBold.ttf') format('truetype');
-    font-weight: 600;
+  font-family: 'SpaceGrotesk';
+  src: url('Space_Grotesk/static/SpaceGrotesk-SemiBold.ttf') format('truetype');
+  font-weight: 600;
 }
 @font-face {
-    font-family: 'SpaceGrotesk';
-    src: url('Space_Grotesk/static/SpaceGrotesk-Bold.ttf') format('truetype');
-    font-weight: 700;
+  font-family: 'SpaceGrotesk';
+  src: url('Space_Grotesk/static/SpaceGrotesk-Bold.ttf') format('truetype');
+  font-weight: 700;
 }
 
 /* --------------------------------------------- */
@@ -35,70 +35,206 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html,
 body {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    background-color: #ffffff;
-    font-family: 'SpaceGrotesk', sans-serif;
-    color: #000;
-    overflow-x: hidden;
-    /* DAS HIER IST NEU: */
-    transition: background-color 2.5s ease; /* 1.5 Sekunden Zeit für den Farbwechsel */
+  background-color: #ffffff;
+  font-family: 'SpaceGrotesk', sans-serif;
+  color: #000;
+  overflow-x: hidden;
+  transition: background-color 1.5s ease;
 }
 
 /* --------------------------------------------- */
 /* NAME / MENU (Desktop & Header-Fix)            */
 /* --------------------------------------------- */
 
-/* NEU: Header-Container für konsistente Positionierung */
+/* --------------------------------------------- */
+/* NAME / MENU (Desktop & Header-Fix)            */
+/* --------------------------------------------- */
+
 .top-header {
-    position: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%; 
-    padding: 0 12px; /* Desktop Rand */
-    z-index: 30;
-    display: flex; 
-    pointer-events: none; /* Klicks durchlassen */
+  position: sticky;
+  top: 0;
+
+  width: 100%;
+  height: 60px;
+  padding: 0 12px;
+
+  z-index: 1000;
+
+  pointer-events: auto;
 }
 
-/* top-name und top-menu erhalten keine feste Position mehr */
+
+/* Ikran Hassan (Dauerhaft Rechts fixiert) */
 .top-name {
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-    pointer-events: auto; /* Klicks zulassen */
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  
+  /* POSITIONIERUNG FIXIEREN */
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  
+  pointer-events: auto;
+  z-index: 35; 
 }
 .top-name:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
+/* Projekte (Dauerhaft Links fixiert und versteckt) */
 .top-menu {
-    margin-right: 20px; /* Abstand ZWISCHEN Menu und Name auf Desktop */
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    text-decoration: none;
-    cursor: pointer;
-    color: #000;
-    display: none; /* nur im Fokusmodus sichtbar */
-    pointer-events: auto;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  color: #000;
+  
+  /* POSITIONIERUNG FIXIEREN */
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+
+  /* VERSTECKTER ZUSTAND */
+  opacity: 0;
+  visibility: hidden; 
+  pointer-events: none; /* Klicks ignorieren, wenn unsichtbar */
+  z-index: 35;
+  transition: opacity 0.2s ease;
 }
 .top-menu:hover {
-    text-decoration: none;
+  text-decoration: none;
+}
+
+/* --------------------------------------------- */
+/* NEU: IKRAN HOVER POPUPS                       */
+/* --------------------------------------------- */
+
+/* --------------------------------------------- */
+/* NEU: IKRAN HOVER POPUPS (DIESEN BLOCK LÖSCHEN) */
+/* --------------------------------------------- */
+
+/* --------------------------------------------- */
+/* IKRAN HOVER POPUPS – 2 BILDER FREI POSITIONIERBAR */
+/* --------------------------------------------- */
+
+/* --------------------------------------------- */
+/* IKRAN HOVER POPUPS – FREI POSITIONIERBAR 3:2 */
+/* --------------------------------------------- */
+
+.ikran-popups{
+  position: fixed;
+  inset: 0;
+  z-index: 25;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Trigger */
+.top-name:hover ~ .ikran-popups{
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Popup-Bilder */
+.ikran-img-box{
+  position: absolute;
+
+  /* RESPONSIVE GRÖSSE */
+  width: clamp(180px, 26vw, 460px);
+
+  /* FIXES SEITENVERHÄLTNIS 3:2 */
+  aspect-ratio: 3 / 2;
+
+  overflow: hidden;
+  background: #e5e5e5;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+
+  transform: translateY(20px) scale(0.95);
+  transition: transform 0.6s ease-out;
+}
+
+.top-name:hover ~ .ikran-popups .ikran-img-box{
+  transform: translateY(0) scale(1);
+}
+
+.ikran-img-box img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --------------------------------------------- */
+/* POSITIONEN – JEDES BILD EINZELN STEUERN       */
+/* --------------------------------------------- */
+
+/* Bild 1 */
+.ikran-popups .ikran-img-box:nth-child(1){
+  top: 20vh;
+  left: 10vw;
+}
+
+/* Bild 2 */
+.ikran-popups .ikran-img-box:nth-child(2){
+  top: 50vh;
+  right: 10vw;
+}
+
+/* TRIGGER: Wenn man über .top-name fährt */
+.top-name:hover ~ .ikran-popups {
+  opacity: 1;
+  visibility: visible;
+}   
+/* Animation beim Einblenden */
+.top-name:hover ~ .ikran-popups .ikran-img-box {
+  transform: translateY(0) scale(1);
+  /* --------------------------------------------- */
+/* INDIVIDUELLE POSITIONIERUNG (Dein Wunsch)     */
+/* --------------------------------------------- */
+
+/* Definiere die Position für das ERSTE Bild (.img-a) */
+.top-hover-img.img-a[data-target="ikran-info"] {
+    width: 35vw; /* Breite des Bildes */
+    height: 45vh; /* Höhe des Bildes */
+    top: 2vh; /* Abstand vom oberen Bildschirmrand */
+    left: 5vw; /* Abstand vom linken Bildschirmrand */
+    right: auto; /* Wichtig, wenn du links und rechts kombinierst */
+    z-index: 51; /* Stapelreihenfolge (liegt über img-b) */
+}
+
+/* Definiere die Position für das ZWEITE Bild (.img-b) */
+.top-hover-img.img-b[data-target="ikran-info"] {
+    width: 40vw; 
+    height: 50vh;
+    top: 30vh;
+    /* Du kannst auch rechts statt links verwenden: */
+    right: 5vw; /* Abstand vom rechten Bildschirmrand */
+    left: auto; /* Stellt sicher, dass left ignoriert wird */
+    z-index: 52; 
+}
 }
 
 /* --------------------------------------------- */
@@ -106,359 +242,461 @@ body {
 /* --------------------------------------------- */
 
 .mein-grid {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;/* alle Zeilen gemeinsam mittig */
-    width: 100%;
-    padding: 40px 0 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 40px 0 20px;
 }
 
 .mein-grid--menu {
-    min-height: 100vh;
+  min-height: 100vh;
 }
 
 .mein-grid--details .box {
-    display: none;
+  display: none;
 }
 
 .box {
-    position: relative;
-    width: 100%;
-    transition: opacity 0.4s ease; 
+  position: relative;
+  width: 100%;
+  transition: opacity 0.2s ease;
 }
 
 /* schwarzer Balken beim Hover */
 .box::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: -10px;
-    background-color: #000;
-    opacity: 0;
-    transition: opacity 0.25s ease;
-    z-index: -1;
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: -10px;
+  background-color: #000;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  z-index: -1;
 }
 
 .row {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 0.15em 12px;   /* fast randnah */
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0.15em 12px;
 }
 
 /* großer Titel */
 .title {
-    text-decoration: none;
-    color: #000;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    font-size: clamp(3rem, 7vw, 5rem);
-    line-height: 0.9;
-    white-space: nowrap;
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: clamp(3rem, 7vw, 5rem);
+  line-height: 0.9;
+  white-space: nowrap;
 }
 
 /* kleiner Text rechts */
 .meta {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    line-height: 1.2;
-    color: #000;
-    margin-left: 0.1rem;
-    margin-top: 0.2rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  line-height: 1.2;
+  color: #000;
+  margin-left: 0.1rem;
+  margin-top: 0.2rem;
 }
 
 /* Hover: Balken + Textfarbe */
 .box:hover::before {
-    opacity: 1;
+  opacity: 1;
 }
 .box:hover .title,
 .box:hover .meta {
-    color: #fff;
+  color: #fff;
 }
 
 /* --------------------------------------------- */
 /* HOVER-BILDER / ÜBERSICHT (Desktop)            */
 /* --------------------------------------------- */
+/* --------------------------------------------- */
+/* HOVER-BILDER / ÜBERSICHT (RESPONSIVE CLAMP)   */
+/* --------------------------------------------- */
 
+/* Basis für alle Hover-Bilder */
 .hover-img {
-    position: fixed;
-    width: 250px; /* Standardbreite */
-    height: 165px; /* Standardhöhe (ca. 2:3) */
-    background-color: #e5e5e5;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
-    opacity: 0;
-    transform: translateY(5px);
-    z-index: 5;
-    transition:
-        opacity 0.45s ease-out 0.15s,
-        transform 0.55s ease-out 0.15s;
-    pointer-events: none; /* Bilder fangen keine Klicks ab */
-} 
+  position: fixed;
+
+  /* Default-Größe (wird pro img-a/b/c/d überschrieben) */
+  width: clamp(140px, 22vw, 420px);
+  height: auto;
+
+  /* Default-Format (wird pro Bild überschrieben) */
+  aspect-ratio: 3 / 2;
+
+  background-color: #e5e5e5;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+
+  opacity: 0;
+  transform: translateY(5px);
+  z-index: 5;
+
+  transition:
+    opacity 0.45s ease-out 0.15s,
+    transform 0.55s ease-out 0.15s;
+
+  pointer-events: none;
+}
 
 .box:hover .hover-img {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .hover-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-/* ---------------------------------------------------- */
-/* INDIVIDUELLE GRÖSSENANPASSUNG PRO PROJEKT & BILD     */
-/* Passt die width und height der .hover-img div's an   */
-/* ---------------------------------------------------- */
+/* --------------------------------------------- */
+/* PROJEKT-SPEZIFISCHE POSITIONEN + CLAMP-GRÖSSEN */
+/* (Positionen: wie bei dir; Größen: clamp)       */
+/* --------------------------------------------- */
 
-/* ------------------------------------------- */
-/* --- PROJEKT: ERWECKEN DER NACHT (Fokus: Kontrastreich & Klar) --- */
-/* ------------------------------------------- */
-/* --- PROJEKT: ERWECKEN DER NACHT --- */
-/* ALLGEMEINE VORAUSSETZUNGEN:
-   - Übergeordneter Container benötigt position: relative;
-   - Bilder (img-a bis img-d) benötigen position: absolute;
-*/
-
-/* ------------------------------------------- */
-/* --- PROJEKT: ERWECKEN DER NACHT (Fokus: Kontrastreich & Klar) --- */
-/* ALLGEMEINE VORAUSSETZUNGEN:
-   - Übergeordneter Container benötigt position: relative;
-   - Bilder (img-a bis img-d) benötigen position: absolute;
-   - KEINE ÜBERLAPPUNG ERWÜNSCHT.
-*/
-
-/* ------------------------------------------- */
-/* --- PROJEKT: ERWECKEN DER NACHT (Blockstruktur) --- */
-.box[data-project="erwecken"] .img-a { width: 420px; height: 280px; top: 25vh; left: 10vw; z-index: 10; } /* Links oben */
-.box[data-project="erwecken"] .img-b { width: 250px; height: 375px; top: 28vh; right: 15vw; z-index: 12; } /* Rechts oben (Vertikal) */
-.box[data-project="erwecken"] .img-c { width: 300px; height: 200px; top: 55vh; left: 15vw; z-index: 9; } /* Links Mitte/Unten, unter A */
-.box[data-project="erwecken"] .img-d { width: 200px; height: 135px; top: 68vh; right: 8vw; z-index: 8; } /* Rechts unten */
-
-/* ------------------------------------------- */
-/* --- PROJEKT: ZWISCHEN LICHT UND RAUM (Fokus: Weit & Saubere Trennung) --- */
-.box[data-project="licht-raum"] .img-a { width: 550px; height: 365px; top: 30vh; left: 5vw; z-index: 12; } /* Links dominant */
-.box[data-project="licht-raum"] .img-b { width: 250px; height: 165px; top: 35vh; right: 18vw; z-index: 9; } /* Rechts oben */
-.box[data-project="licht-raum"] .img-c { width: 180px; height: 270px; top: 40vh; left: 60vw; z-index: 11; } /* Mitte rechts (Vertikal) */
-.box[data-project="licht-raum"] .img-d { width: 380px; height: 250px; top: 70vh; right: 5vw; z-index: 10; } /* Rechts unten */
-
-/* ------------------------------------------- */
-/* --- PROJEKT: SCHRIFT IM STROM (Fokus: Vertikal & Horizontal getrennt) --- */
-.box[data-project="schrift"] .img-a { width: 280px; height: 420px; top: 20vh; left: 15vw; z-index: 12; } /* Links oben (Vertikal) */
-.box[data-project="schrift"] .img-b { width: 450px; height: 300px; top: 25vh; right: 10vw; z-index: 10; } /* Rechts oben (Horizontal) */
-.box[data-project="schrift"] .img-c { width: 200px; height: 135px; top: 65vh; left: 5vw; z-index: 9; } /* Links unten */
-.box[data-project="schrift"] .img-d { width: 300px; height: 200px; top: 68vh; right: 20vw; z-index: 8; } /* Rechts unten */
-
-/* ------------------------------------------- */
-/* --- PROJEKT: ZWISCHEN TÜREN (Fokus: Große Blöcke mit Zwischenraum) --- */
-.box[data-project="tueren"] .img-a { width: 380px; height: 255px; top: 28vh; left: 15vw; z-index: 10; } /* Links oben */
-.box[data-project="tueren"] .img-b { width: 250px; height: 375px; top: 40vh; right: 10vw; z-index: 11; } /* Rechts Mitte (Vertikal) */
-.box[data-project="tueren"] .img-c { width: 200px; height: 135px; top: 60vh; left: 5vw; z-index: 8; } /* Links unten */
-.box[data-project="tueren"] .img-d { width: 550px; height: 365px; top: 70vh; right: 2vw; z-index: 12; } /* Dominanter Abschluss rechts unten */
-
-/* ------------------------------------------- */
-/* --- PROJEKT: LEBEN IM SCHATTEN (Fokus: Klare Trennung um den Balken) --- */
-.box[data-project="schatten"] .img-a { width: 450px; height: 300px; top: 23vh; left: 8vw; z-index: 11; } /* Links oben */
-.box[data-project="schatten"] .img-b { width: 220px; height: 330px; top: 35vh; right: 18vw; z-index: 10; } /* Rechts oben (Vertikal) */
-.box[data-project="schatten"] .img-c { width: 280px; height: 190px; top: 55vh; left: 20vw; z-index: 9; } /* Links unten (unter dem Balken) */
-.box[data-project="schatten"] .img-d { width: 400px; height: 270px; top: 70vh; right: 10vw; z-index: 12; } /* Rechts unten */
-
-/* ------------------------------------------- */
-/* --- PROJEKT: DAS ZUSAMMENSPIEL (Fokus: Ausgewogene Dominanz) --- */
-.box[data-project="zusammenspiel"] .img-a { width: 300px; height: 200px; top: 33vh; left: 12vw; z-index: 9; } /* Links oben */
-.box[data-project="zusammenspiel"] .img-b { width: 240px; height: 360px; top: 50vh; right: 15vw; z-index: 11; } /* Rechts Mitte (Vertikal) */
-.box[data-project="zusammenspiel"] .img-c { width: 480px; height: 320px; top: 70vh; left: 6vw; z-index: 12; } /* Dominanter Abschluss links unten */
-.box[data-project="zusammenspiel"] .img-d { width: 180px; height: 120px; top: 85vh; right: 20vw; z-index: 8; } /* Kleiner Akzent rechts unten */
-
-/* ------------------------------------------- */
-/* --- PROJEKT: HIDDEN LONDON (Fokus: Links/Rechts-Trennung) --- */
-.box[data-project="hidden-london"] .img-a { width: 280px; height: 185px; top: 25vh; left: 18vw; z-index: 9; } /* Links oben */
-.box[data-project="hidden-london"] .img-b { width: 450px; height: 300px; top: 37vh; right: 5vw; z-index: 12; } /* Rechts oben (Dominant) */
-.box[data-project="hidden-london"] .img-c { width: 200px; height: 300px; top: 50vh; left: 10vw; z-index: 11; } /* Links Mitte (Vertikal) */
-.box[data-project="hidden-london"] .img-d { width: 350px; height: 235px; top: 75vh; right: 15vw; z-index: 10; } /* Rechts unten */
-
-/* ------------------------------------------- */
-/* --- PROJEKT: WIE IM FILM (Fokus: Klassisch Cinema-Scope-Betont) --- */
-.box[data-project="film"] .img-a { width: 520px; height: 345px; top: 20vh; left: 5vw; z-index: 12; } /* Links oben (Sehr groß) */
-.box[data-project="film"] .img-b { width: 220px; height: 150px; top: 30vh; right: 20vw; z-index: 9; } /* Rechts oben */
-.box[data-project="film"] .img-c { width: 300px; height: 200px; top: 55vh; left: 18vw; z-index: 10; } /* Links unten */
-.box[data-project="film"] .img-d { width: 360pxx; height: 240px; top: 60vh; right: 10vw; z-index: 11; } /* Rechts unten (Vertikal) */
-/* Beispiel-Basis-CSS für die Positionierung */
-
-/* Der Container der Bilder, der beim Hovern sichtbar wird */
-.box:hover .image-container {
-    /* ... Sichtbarkeit einstellen (opacity, display: block) */
-    position: absolute; /* Oder fixed, je nach Wunsch */
-    /* ... weitere Stil-Einstellungen */
-}
-
-/* Die einzelnen Bilder positionieren (Beispiel für PROJEKT: ERWECKEN DER NACHT) */
+/* ERWECKEN */
 .box[data-project="erwecken"] .img-a {
-    /* ... Größen-Code von oben ... */
-    position: absolute;
-    top: -50px;    /* Oben links */
-    left: -100px;
-    z-index: 10;
+  width: clamp(150px, 18vw, 315px);
+  aspect-ratio: 315 / 210;
+  top: 1vh; left: 8vw; z-index: 10;
 }
-
 .box[data-project="erwecken"] .img-b {
-    /* ... Größen-Code von oben ... */
-    position: absolute;
-    top: 100px;    /* Rechts überlappend */
-    right: -150px;
-    z-index: 12; /* Überlappt A */
+  width: clamp(180px, 26vw, 450px);
+  aspect-ratio: 450 / 300;
+  top: 35vh; right: 40vw; z-index: 12;
 }
-
 .box[data-project="erwecken"] .img-c {
-    /* ... Größen-Code von oben ... */
-    position: absolute;
-    bottom: -80px; /* Unten links */
-    left: 20px;
-    z-index: 8;
+  width: clamp(160px, 20vw, 300px);
+  aspect-ratio: 300 / 200;
+  top: 61vh; left: 12vw; z-index: 9;
 }
-
 .box[data-project="erwecken"] .img-d {
-    /* ... Größen-Code von oben ... */
-    position: absolute;
-    bottom: 0;     /* Rechts unten */
-    right: 0;
-    z-index: 9;
+  width: clamp(120px, 14vw, 200px);
+  aspect-ratio: 200 / 135;
+  top: 74vh; right: 30vw; z-index: 8;
 }
-/* --------------------------------------------- */
-/* POSITIONIERUNG DER HOVER-BILDER               */
-/* Bei geänderten Bildgrößen müssen diese Werte  */
-/* eventuell angepasst werden!                   */
-/* --------------------------------------------- */
-/* ALLGEMEINE VORAUSSETZUNGEN:
-   - Bilder (img-a bis img-d) benötigen position: absolute;
-   - KEINE ÜBERLAPPUNG!
-*/
 
-/* GRÖSSENDEFINITION (AUS DEM VORHERIGEN SCHRITT, WIEDERHOLT ZUR KLARHEIT) */
-.box [class^="img-"] { width: 350px; height: 250px; }
+/* LICHT UND RAUM */
+.box[data-project="licht-raum"] .img-a {
+  width: clamp(220px, 32vw, 550px);
+  aspect-ratio: 550 / 365;
+  top: 50vh; left: 5vw; z-index: 12;
+}
+.box[data-project="licht-raum"] .img-b {
+  width: clamp(140px, 16vw, 250px);
+  aspect-ratio: 250 / 165;
+  top: 43vh; right: 40vw; z-index: 9;
+}
+.box[data-project="licht-raum"] .img-c {
+  width: clamp(160px, 20vw, 300px);
+  aspect-ratio: 300 / 200;
+  top: 10vh; left: 15vw; z-index: 11;
+}
+.box[data-project="licht-raum"] .img-d {
+  width: clamp(180px, 24vw, 380px);
+  aspect-ratio: 380 / 250;
+  top: 70vh; right: 20vw; z-index: 10;
+}
 
-/* ------------------------------------------- */
-/* --- VEREINHEITLICHTE POSITIONIERUNG FÜR ALLE PROJEKTE --- */
+/* SCHRIFT IM STROM */
+.box[data-project="schrift"] .img-a {
+  width: clamp(180px, 24vw, 380px);
+  aspect-ratio: 380 / 280;
+  top: 10vh; right: 25vw; z-index: 12;
+}
+.box[data-project="schrift"] .img-b {
+  width: clamp(190px, 26vw, 450px);
+  aspect-ratio: 450 / 300;
+  top: 2vh; left: 10vw; z-index: 10;
+}
+.box[data-project="schrift"] .img-c {
+  width: clamp(160px, 20vw, 300px);
+  aspect-ratio: 300 / 200;
+  top: 61vh; left: 10vw; z-index: 9;
+}
+.box[data-project="schrift"] .img-d {
+  width: clamp(140px, 18vw, 320px);
+  aspect-ratio: 320 / 215;
+  top: 74vh; right: 30vw; z-index: 8;
+}
 
-/* --- PROJEKT: ERWECKEN DER NACHT --- */
-.box[data-project="erwecken"] .img-a { top: 20vh; left: 5vw; }
-.box[data-project="erwecken"] .img-b { top: 20vh; right: 5vw; }
-.box[data-project="erwecken"] .img-c { top: 55vh; left: 15vw; }
-.box[data-project="erwecken"] .img-d { top: 55vh; right: 15vw; }
+/* ZWISCHEN TÜREN */
+.box[data-project="tueren"] .img-a {
+  width: clamp(180px, 24vw, 380px);
+  aspect-ratio: 380 / 250;
+  top: 5vh; left: 6vw; z-index: 10;
+}
+.box[data-project="tueren"] .img-b {
+  width: clamp(160px, 20vw, 300px);
+  aspect-ratio: 300 / 200;
+  top: 25vh; right: 40vw; z-index: 12;
+}
+.box[data-project="tueren"] .img-c {
+  width: clamp(150px, 18vw, 280px);
+  aspect-ratio: 280 / 190;
+  top: 61vh; left: 12vw; z-index: 9;
+}
+.box[data-project="tueren"] .img-d {
+  width: clamp(150px, 22vw, 420px);
+  aspect-ratio: 420 / 280;
+  top: 74vh; right: 30vw; z-index: 8;
+}
 
-/* --- PROJEKT: ZWISCHEN LICHT UND RAUM --- */
-.box[data-project="licht-raum"] .img-a { top: 20vh; left: 5vw; }
-.box[data-project="licht-raum"] .img-b { top: 20vh; right: 5vw; }
-.box[data-project="licht-raum"] .img-c { top: 55vh; left: 15vw; }
-.box[data-project="licht-raum"] .img-d { top: 55vh; right: 15vw; }
+/* LEBEN IM SCHATTEN */
+.box[data-project="schatten"] .img-a {
+  width: clamp(190px, 26vw, 450px);
+  aspect-ratio: 450 / 300;
+  top: 10vh; left: 5vw; z-index: 10;
+}
+.box[data-project="schatten"] .img-b {
+  width: clamp(160px, 20vw, 300px);
+  aspect-ratio: 300 / 200;
+  top: 35vh; right: 40vw; z-index: 9;
+}
+.box[data-project="schatten"] .img-c {
+  width: clamp(170px, 22vw, 350px);
+  aspect-ratio: 350 / 235;
+  top: 67vh; left: 10vw; z-index: 11;
+}
+.box[data-project="schatten"] .img-d {
+  width: clamp(180px, 24vw, 400px);
+  aspect-ratio: 400 / 270;
+  top: 70vh; right: 35vw; z-index: 12;
+}
 
-/* --- PROJEKT: SCHRIFT IM STROM --- */
-.box[data-project="schrift"] .img-a { top: 20vh; left: 5vw; }
-.box[data-project="schrift"] .img-b { top: 20vh; right: 5vw; }
-.box[data-project="schrift"] .img-c { top: 55vh; left: 15vw; }
-.box[data-project="schrift"] .img-d { top: 55vh; right: 15vw; }
+/* DAS ZUSAMMENSPIEL */
+.box[data-project="zusammenspiel"] .img-a {
+  width: clamp(160px, 20vw, 300px);
+  aspect-ratio: 300 / 200;
+  top: 78vh; left: 12vw; z-index: 9;
+}
+.box[data-project="zusammenspiel"] .img-b {
+  width: clamp(170px, 22vw, 360px);
+  aspect-ratio: 360 / 240;
+  top: 35vh; right: 40vw; z-index: 11;
+}
+.box[data-project="zusammenspiel"] .img-c {
+  width: clamp(200px, 28vw, 480px);
+  aspect-ratio: 480 / 320;
+  top: 15vh; left: 6vw; z-index: 12;
+}
+.box[data-project="zusammenspiel"] .img-d {
+  width: clamp(110px, 12vw, 180px);
+  aspect-ratio: 180 / 120;
+  top: 75vh; right: 32vw; z-index: 8;
+}
 
-/* --- PROJEKT: ZWISCHEN TÜREN --- */
-.box[data-project="tueren"] .img-a { top: 20vh; left: 5vw; }
-.box[data-project="tueren"] .img-b { top: 20vh; right: 5vw; }
-.box[data-project="tueren"] .img-c { top: 55vh; left: 15vw; }
-.box[data-project="tueren"] .img-d { top: 55vh; right: 15vw; }
+/* HIDDEN LONDON */
+.box[data-project="hidden-london"] .img-a {
+  width: clamp(140px, 18vw, 280px);
+  aspect-ratio: 280 / 185;
+  top: 5vh; left: 30vw; z-index: 9;
+}
+.box[data-project="hidden-london"] .img-b {
+  width: clamp(190px, 26vw, 450px);
+  aspect-ratio: 450 / 300;
+  top: 10vh; right: 1vw; z-index: 12;
+}
+.box[data-project="hidden-london"] .img-c {
+  width: clamp(160px, 20vw, 300px);
+  aspect-ratio: 300 / 200;
+  top: 35vh; left: 10vw; z-index: 11;
+}
+.box[data-project="hidden-london"] .img-d {
+  width: clamp(170px, 22vw, 350px);
+  aspect-ratio: 350 / 235;
+  top: 46vh; right: 30vw; z-index: 10;
+}
 
-/* --- PROJEKT: LEBEN IM SCHATTEN --- */
-.box[data-project="schatten"] .img-a { top: 20vh; left: 5vw; }
-.box[data-project="schatten"] .img-b { top: 20vh; right: 15vw; }
-.box[data-project="schatten"] .img-c { top: 60vh; left: 15vw; }
-.box[data-project="schatten"] .img-d { top: 40vh; right: 15vw; }
-
-/* --- PROJEKT: DAS ZUSAMMENSPIEL --- */
-.box[data-project="zusammenspiel"] .img-a { top: 20vh; left: 5vw; }
-.box[data-project="zusammenspiel"] .img-b { top: 20vh; right: 5vw; }
-.box[data-project="zusammenspiel"] .img-c { top: 55vh; left: 15vw; }
-.box[data-project="zusammenspiel"] .img-d { top: 55vh; right: 15vw; }
-
-/* --- PROJEKT: HIDDEN LONDON --- */
-.box[data-project="hidden-london"] .img-a { top: 20vh; left: 5vw; }
-.box[data-project="hidden-london"] .img-b { top: 20vh; right: 5vw; }
-.box[data-project="hidden-london"] .img-c { top: 55vh; left: 15vw; }
-.box[data-project="hidden-london"] .img-d { top: 60vh; right: 15vw; }
-
-/* --- PROJEKT: WIE IM FILM --- */
-.box[data-project="film"] .img-a { top: 20vh; left: 5vw; }
-.box[data-project="film"] .img-b { top: 20vh; right: 5vw; }
-.box[data-project="film"] .img-c { top: 55vh; left: 15vw; }
-.box[data-project="film"] .img-d { top: 55vh; right: 15vw; }
+/* WIE IM FILM */
+.box[data-project="film"] .img-a {
+  width: clamp(210px, 30vw, 520px);
+  aspect-ratio: 520 / 345;
+  top: 5vh; left: 5vw; z-index: 12;
+}
+.box[data-project="film"] .img-b {
+  width: clamp(120px, 14vw, 220px);
+  aspect-ratio: 220 / 150;
+  top: 10vh; right: 25vw; z-index: 9;
+}
+.box[data-project="film"] .img-c {
+  width: clamp(160px, 20vw, 300px);
+  aspect-ratio: 300 / 200;
+  top: 55vh; left: 18vw; z-index: 10;
+}
+.box[data-project="film"] .img-d {
+  width: clamp(170px, 22vw, 360px);
+  aspect-ratio: 360 / 240;
+  top: 40vh; right: 30vw; z-index: 11;
+}
 
 .project-page {
-    width: 95vw;
-    margin: 0 auto;
-    padding: 80px 0 80px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+  width: 95vw;
+  margin: 0 auto;
+  padding: 80px 0 80px;
+  display: flex;
+  flex-direction: column;
+  /* Korrigierter Abstand: 24px */
+  gap: 24px; 
 }
 
 .project-hero img {
-    width: 100%;
-    display: block;
-    grid-column: span 6; /* großes Bild über alle 6 Spalten */
+  width: 100%;
+  display: block;
+  grid-column: span 6;
+  
 }
 
 .project-gallery {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr); /* 6-Spalten-Grid */
-    gap: 24px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 24px;
+  row-gap: 24px;
 }
 
 .project-gallery img {
-    width: 100%;
-    display: block;
-    grid-column: span 3; /* Bilder nehmen 3 Spalten -> 2 Bilder pro Reihe */
-    height: auto;
+  width: 100%;
+  display: block;
+  grid-column: span 3;
+  height: auto;
 }
 
-/* KORRIGIERTE TEXT-REGELN (Grid-Breite auf Wrapper, Ausrichtung auf Absatz) */
 .project-text {
-    grid-column: span 4; /* Der Wrapper nimmt 4 Spalten des Grids ein */
+  grid-column: span 4;
 }
 
 .project-text p {
-    font-size: 0.95rem;
-    line-height: 1.2;
-    color: #fff; /* Farbe im Fokus-Modus */
-    text-align: left; /* Links-bündig */
+  font-size: 0.95rem;
+  line-height: 1.2;
+  color: #fff;
+  text-align: left;
 }
+/* --------------------------------------------- */
+/* NEU: Text-Container (links/rechts)            */
+/* --------------------------------------------- */
+
+/* Container für die linke (Text) und rechte (Meta) Spalte */
+/* --------------------------------------------- */
+/* NEU: Text-Container (links/rechts)            */
+/* --------------------------------------------- */
+
+/* Container für die linke (Text) und rechte (Meta) Spalte */
+/* --------------------------------------------- */
+/* NEU: Text-Container (links/rechts)            */
+/* --------------------------------------------- */
+
+/* Container für die linke (Text) und rechte (Meta) Spalte (Unverändert) */
+/* --------------------------------------------- */
+/* NEU: Direkte Grid-Platzierung der Textblöcke  */
+/* --------------------------------------------- */
+
+/* Hauptbeschreibung: Nimmt die Spalten 1 bis 4 ein (links) */
+.description-container {
+    grid-column: span 4;
+}
+
+/* Metadaten: Nimmt die Spalten 5 bis 6 ein (ganz rechts im Grid) */
+.project-meta-container {
+    grid-column: span 2;
+    /* Metadaten-Container zwingend an den rechten Rand des zugewiesenen Platzes */
+    display: flex;
+    justify-content: flex-end; 
+}
+
+/* Hauptbeschreibung Styling */
+.description-container .description {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #fff;
+    margin-right: 0; 
+    text-align: left;
+}
+
+/* Metadaten Styling */
+.project-meta-container .project-meta {
+    text-align: right; 
+    font-size: 0.8rem;
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #fff;
+    
+    /* Metadaten-Stapel */
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-end; /* Zwingt die Zeilen ganz nach rechts */
+}
+.project-meta-container .project-meta span {
+    display: block;
+}
+/* --------------------------------------------- */
+/* HINZUGEFÜGT: Überschreibt die Grid-Breite     */
+/* --------------------------------------------- */
+
+/* Macht jedes Bild, das diese Klasse hat, 6 Spalten breit (volle Reihe) */
+.project-gallery img.full-span {
+  grid-column: span 6 !important; 
+  /* !important stellt sicher, dass es alle anderen Regeln überschreibt */
+}
+/* --------------------------------------------- */
+/* ALTE REGEL LÖSCHEN/ERSETZEN (WICHTIG!)        */
+/* --------------------------------------------- */
+
+/* DIESEN ALTEN BLOCK MUSS GELÖSCHT/ANGEPASST WERDEN,
+   da er nun in .project-text .description definiert ist: */
+/*
+.project-text p {
+  font-size: 0.95rem;
+  line-height: 1.2;
+  color: #fff;
+  text-align: left;
+}
+*/
 
 /* --------------------------------------------- */
 /* FOCUS MODE – beim Klick auf Titel             */
 /* --------------------------------------------- */
 
-/* Body wird schwarz & darf scrollen */
+/* --------------------------------------------- */
+/* FOCUS MODE – beim Klick auf Titel             */
+/* --------------------------------------------- */
+
 body.focus-mode {
-    background-color: #000;
+  background-color: #000;
 }
-/* Titel + Meta weiß im Fokus */
 body.focus-mode .title,
 body.focus-mode .meta {
-    color: #fff;
+  color: #fff;
 }
 
-/* Name + Menu weiß; Menu im Fokus sichtbar */
-body.focus-mode .top-name,
-body.focus-mode .top-menu {
-    color: #fff;
-}
-body.focus-mode .top-menu {
-    display: inline-block;
+/* Ikran Hassan Farbe anpassen (Position ist fix) */
+body.focus-mode .top-name {
+  color: #fff;
 }
 
-/* Hover-Bilder in Detailansicht ausblenden */
+/* Projekte sichtbar machen */
+body.focus-mode .top-menu {
+  color: #fff;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto; /* Klickbar machen */
+}
+
 body.focus-mode .hover-img {
-    display: none;
+  display: none;
 }
 
 /* --------------------------------------------- */
@@ -466,61 +704,60 @@ body.focus-mode .hover-img {
 /* --------------------------------------------- */
 
 @media (max-width: 800px) {
-    /* LISTENANSICHT */
-    .row {
-        flex-direction: column;
-        padding: 0.2em 20px;
-    }
+  .row {
+    flex-direction: column;
+    padding: 0.2em 20px;
+  }
 
-    .title {
-        font-size: clamp(1.6rem, 5vw, 2.6rem);
-        white-space: normal;
-    }
+  .title {
+    font-size: clamp(1.6rem, 5vw, 2.6rem);
+    white-space: normal;
+  }
 
-    .meta {
-        margin-left: 0;
-        margin-top: 0.2rem;
-    }
+  .meta {
+    margin-left: 0;
+    margin-top: 0.2rem;
+  }
 
-    /* NEUER HEADER AUF MOBILE */
-    .top-header {
-        top: 12px; /* Kleinerer Abstand oben */
-        padding: 0 20px; /* Kleinerer Rand auf Mobile */
-    }
+  .top-header {
+    top: 12px;
+    padding: 0 20px;
+  }
 
-    .top-menu {
-        margin-right: 12px; /* Kleinerer Abstand zwischen Menu und Name */
-    }
+  .top-menu {
+    margin-right: 12px;
+  }
 
-    /* DETAILANSICHT */
-    
-    /* 1. POP-UPS AUSBLENDEN */
-    .hover-img {
-        display: none !important;
-    }
+  .hover-img {
+    display: none !important;
+  }
 
-    /* 2. GRID FÜR 2ER REIHEN BEHALTEN */
-    .project-gallery {
-        grid-template-columns: repeat(6, 1fr);
-        gap: 12px; 
-    }
-    
-    /* 3. TEXT UND HERO BILD ANPASSEN */
-    .project-hero img {
-        grid-column: span 6; /* Hero-Bild volle Breite */
-    }
+  .project-gallery {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+  }
 
-    /* KORRIGIERTER TEXT AUF MOBILE */
-    .project-text { 
-        grid-column: span 4; /* 4-Spalten-Breite auf Mobile beibehalten */
-    }
-    .project-text p {
-        text-align: left;    
-        font-size: 0.8rem; 
-    }
-    
-    /* RESTLICHE MOBILE ANPASSUNGEN */
-    .project-page {
-        width: 90vw;
-    }
+  .project-hero img {
+    grid-column: span 6;
+  }
+
+  .project-text {
+    grid-column: span 4;
+  }
+  .project-text p {
+    text-align: left;
+    font-size: 0.8rem;
+  }
+
+  .project-page {
+    width: 90vw;
+  }
+  
+  /* NEU: Anpassung der Ikran Popups für Handy */
+  .ikran-popups {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    padding: 60px 20px 20px 20px;
+  }
 }
