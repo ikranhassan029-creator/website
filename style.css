@@ -606,7 +606,11 @@ body {
 .description-container {
     grid-column: span 4;
 }
-
+.skill-block {
+  display: block;    /* Sorgt dafür, dass der Text in einer neuen Zeile beginnt */
+  margin-top: 1.2em; /* Erzeugt den Abstand von ca. einer Zeile nach oben */
+  font-weight: 500;  /* Optional: Hebt die Skills leicht vom Fließtext ab */
+}
 /* Metadaten: Nimmt die Spalten 5 bis 6 ein (ganz rechts im Grid) */
 .project-meta-container {
     grid-column: span 2;
@@ -759,5 +763,10 @@ body.focus-mode .hover-img {
     grid-template-rows: 1fr 1fr;
     gap: 20px;
     padding: 60px 20px 20px 20px;
+  }
+  /* Die Beschreibung auf dem Handy kleiner machen */
+  .description-container .description {
+    font-size: 0.5rem !important;
+    line-height: 1.3;
   }
 }
